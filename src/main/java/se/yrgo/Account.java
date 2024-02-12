@@ -24,7 +24,12 @@ public class Account {
     }
 
     public void withdraw(double amount){
-
+        if (amount > 0 && amount <= balance){
+            balance -= amount;
+        }
+        else{
+            throw new IllegalArgumentException("Can't withdraw negative amount");
+        }
     }
 
     public void transfer(Account receiverAccount, double amount){
