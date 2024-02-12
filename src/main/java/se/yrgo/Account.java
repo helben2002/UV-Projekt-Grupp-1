@@ -14,8 +14,13 @@ public class Account {
         this.transactions = new ArrayList<>();
     }
 
-    public void deposit(double amount){
-
+    public void deposit(double amount) {
+        if (amount > 0){
+            balance += amount;
+        }
+        else{
+            throw new IllegalArgumentException("Can't deposit negative amount");
+        }
     }
 
     public void withdraw(double amount){
