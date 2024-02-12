@@ -15,25 +15,32 @@ public class Account {
     }
 
     public void deposit(double amount) {
-        if (amount > 0){
+        if (amount > 0) {
             balance += amount;
-        }
-        else{
+            //transactions.add(new Transaction());
+        } else {
             throw new IllegalArgumentException("Can't deposit negative amount");
         }
     }
 
-    public void withdraw(double amount){
-        if (amount > 0 && amount <= balance){
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
             balance -= amount;
-        }
-        else{
-            throw new IllegalArgumentException("Can't withdraw negative amount");
+            //transactions.add(new Transaction());
+        } else {
+            throw new IllegalArgumentException("Can't withdraw negative amount or insufficient funds");
         }
     }
 
-    public void transfer(Account receiverAccount, double amount){
-
+    public void transfer(Account receiverAccount, double amount) {
+        if (amount > 0 && amount < balance) {
+            balance -= amount;
+            receiverAccount.deposit(amount);
+            //transactions.add(new Transaction());
+        }
+        else {
+        throw new IllegalArgumentException("Can't transfer negative amount or insufficient funds");
+        }
     }
 
     public String getAccountNumber() {
