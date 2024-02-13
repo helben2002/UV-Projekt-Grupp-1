@@ -28,7 +28,7 @@ public class Main {
 
             switch (choice) {
                 case "1":
-                    System.out.println(account1.getBalance());
+                    System.out.println("Balance: " + account1.getBalance());
                     break;
                 case "2":
                     System.out.println("Value to deposit: ");
