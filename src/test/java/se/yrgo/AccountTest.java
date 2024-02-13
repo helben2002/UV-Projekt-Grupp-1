@@ -5,6 +5,10 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
+/**
+ * Helene och Tomas hjälptes åt med testerna till denna klass
+ */
 public class AccountTest {
 
     private Account account;
