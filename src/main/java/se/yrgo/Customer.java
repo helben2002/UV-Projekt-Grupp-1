@@ -17,11 +17,7 @@ public class Customer {
         accounts.add(account);
     }
 
-    public List<Account> geAccounts(){
+    public List<Account> getAccounts(){
         return accounts;
-    }
-
-    public void transfer(Account recipient, double amount, String description){
-        // Transfer funds from this account to the recipient's account
     }
 }
