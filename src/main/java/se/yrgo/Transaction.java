@@ -24,4 +24,13 @@ public class Transaction {
     public LocalDateTime getDateTime() {
         return dateTime;
     }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "type='" + type + '\'' +
+                ", amount=" + amount +
+                ", dateTime=" + dateTime +
+                '}';
+    }
 }
