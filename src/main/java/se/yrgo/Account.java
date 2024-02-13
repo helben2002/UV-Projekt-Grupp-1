@@ -1,6 +1,5 @@
 package se.yrgo;
 
-
 import java.util.*;
 
 public class Account {
@@ -17,7 +16,7 @@ public class Account {
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            //transactions.add(new Transaction());
+            transactions.add(new Transaction("Deposit", amount));
         } else {
             throw new IllegalArgumentException("Can't deposit negative amount");
         }
@@ -26,7 +25,7 @@ public class Account {
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            //transactions.add(new Transaction());
+            transactions.add(new Transaction("Withdraw", amount));
         } else {
             throw new IllegalArgumentException("Can't withdraw negative amount or insufficient funds");
         }
@@ -36,7 +35,7 @@ public class Account {
         if (amount > 0 && amount < balance) {
             balance -= amount;
             receiverAccount.deposit(amount);
-            //transactions.add(new Transaction());
+            transactions.add(new Transaction("Transfer to account: " + receiverAccount, amount));
         }
         else {
         throw new IllegalArgumentException("Can't transfer negative amount or insufficient funds");
