@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+    /**
+     * 
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
 
