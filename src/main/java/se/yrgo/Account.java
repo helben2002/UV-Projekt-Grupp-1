@@ -7,9 +7,9 @@ public class Account {
     private double balance;
     private List<Transaction> transactions;
 
-    public Account(java.lang.String accountNumber, double balance) {
+    public Account(String accountNumber) {
         this.accountNumber = accountNumber;
-        this.balance = balance;
+        this.balance = 0;
         this.transactions = new ArrayList<>();
     }
 
