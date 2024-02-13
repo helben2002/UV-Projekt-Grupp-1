@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AccountTest {
 
-    Account account = new Account("123456", 0);
+    Account account = new Account("123456");
 
 
     @Test
