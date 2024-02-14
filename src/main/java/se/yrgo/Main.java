@@ -23,7 +23,7 @@ public class Main {
             System.out.println(" 1. Check balance");
             System.out.println(" 2. Make deposit");
             System.out.println(" 3. Make withdraw");
-            System.out.println(" 4. Check transfer history");
+            System.out.println(" 4. Check transaction history");
             System.out.println(" 5. Log out");
             System.out.print("Choose one: ");
 
