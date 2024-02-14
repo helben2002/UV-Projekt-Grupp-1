@@ -3,6 +3,7 @@ package se.yrgo;
 import java.time.LocalDateTime;
 
 public class Transaction {
+    
     private String type;
     private double amount;
     private LocalDateTime dateTime;
