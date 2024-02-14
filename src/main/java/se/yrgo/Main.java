@@ -46,7 +46,9 @@ public class Main {
                     account1.withdraw(value);
                     break;
                 case "4":
-                    System.out.println(account1.getTransactions());
+                    for(Transaction t : account1.getTransactions()) {
+                        System.out.println(t);
+                    }
                     break;
                 case "5":
                     return;
