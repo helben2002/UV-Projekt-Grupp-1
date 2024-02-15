@@ -26,7 +26,7 @@ public class Account {
             balance += amount;
             transactions.add(new Transaction("Deposit", amount));
         } else {
-            System.out.println("You can't deposit a negative amount.");
+            throw new IllegalArgumentException("Can't deposit a negative amount");
         }
     }
 
@@ -39,10 +39,8 @@ public class Account {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
             transactions.add(new Transaction("Withdraw", amount));
-        } else if (amount <= 0) {
-            System.out.println("you can't withdraw a negative amount.");
         } else {
-            System.out.println("Insufficient funds.");
+            throw new IllegalArgumentException("Can't deposit a negative amount or insufficient funds");
         }
     }
 
