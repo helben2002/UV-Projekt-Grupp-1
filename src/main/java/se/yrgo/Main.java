@@ -55,7 +55,7 @@ public class Main {
                 default:
                     System.out.println("Selection not found.");
             }
-            scan.close();
+            //scan.close();
         }
     }
 }
