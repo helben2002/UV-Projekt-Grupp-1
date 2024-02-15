@@ -2,8 +2,7 @@ package se.yrgo;
 
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
@@ -19,15 +18,23 @@ public class AccountTest {
     }
 
     @Test
-    void depositValidAmountBalanceIncreased() {
-        account.deposit(100.0);
-        assertEquals(100.0, account.getBalance());
+    void depositNegativeAmount_ThrowException(){
+        assertThrows(IllegalArgumentException.class, () -> account.deposit(-100));
     }
 
     @Test
-    void depositNegativeAmount_noChangeInBalance() {
+    void withdrawNegativeAmount_ThrowException(){
+        assertThrows(IllegalArgumentException.class, () -> account.withdraw(-100));
+    }
+
+    @Test
+    void withdrawMoreThanBalance_ThrowException(){
+        assertThrows(IllegalArgumentException.class, () -> account.withdraw(50));
+    }
+
+    @Test
+    void depositValidAmountBalanceIncreased() {
         account.deposit(100.0);
-        account.deposit(-50.0);
         assertEquals(100.0, account.getBalance());
     }
 
@@ -37,21 +44,6 @@ public class AccountTest {
         account.withdraw(50.0);
         assertEquals(50.0, account.getBalance());
     }
-
-    @Test
-    void withdrawNegativeAmount_noChangeInBalance() {
-        account.deposit(100.0);
-        account.withdraw(-50.0);
-        assertEquals(100.0, account.getBalance());
-    }
-
-    @Test
-    void withdrawInsufficientFunds_noChangeInBalance() {
-        account.deposit(50.0);
-        account.withdraw(100.0);
-        assertEquals(50.0, account.getBalance());
-    }
-
 
     @Test
     void getAccountNumberReturnsCorrectNumber() {
@@ -74,5 +66,4 @@ public class AccountTest {
         account.deposit(50);
         assertEquals(1, account.getTransactions().size());
     }
-
 }
