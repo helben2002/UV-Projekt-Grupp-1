@@ -1,16 +1,18 @@
 package se.yrgo;
 
 import java.time.LocalDateTime;
+import java.time.format.*;
 
 public class Transaction {
+    
     private String type;
     private double amount;
-    private LocalDateTime dateTime;
+    private String dateTime;
 
     public Transaction(String type, double amount){
         this.type = type;
         this.amount = amount;
-        this.dateTime = LocalDateTime.now();
+        this.dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
     }
 
     public String getType() {
@@ -21,16 +23,13 @@ public class Transaction {
         return amount;
     }
 
-    public LocalDateTime getDateTime() {
+    public String getDateTime() {
         return dateTime;
     }
 
     @Override
     public String toString() {
-        return "Transaction{" +
-                "type='" + type + '\'' +
-                ", amount=" + amount +
-                ", dateTime=" + dateTime +
-                '}';
+        return String.format("%s    %.2f    %s", type, amount, dateTime);
+
     }
 }

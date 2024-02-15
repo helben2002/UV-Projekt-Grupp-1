@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+    /**
+     * 
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
 
@@ -18,7 +23,7 @@ public class Main {
             System.out.println(" 1. Check balance");
             System.out.println(" 2. Make deposit");
             System.out.println(" 3. Make withdraw");
-            System.out.println(" 4. Check transfer history");
+            System.out.println(" 4. Check transaction history");
             System.out.println(" 5. Log out");
             System.out.print("Choose one: ");
 
@@ -41,7 +46,9 @@ public class Main {
                     account1.withdraw(value);
                     break;
                 case "4":
-                    System.out.println(account1.getTransactions());
+                    for(Transaction t : account1.getTransactions()) {
+                        System.out.println(t);
+                    }
                     break;
                 case "5":
                     return;
