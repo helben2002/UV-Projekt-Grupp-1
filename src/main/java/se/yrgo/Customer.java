@@ -3,6 +3,10 @@ package se.yrgo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class representing Customers with methods to switch between Accounts
+ * and Transfer Funds (between Account (and presumably in a non-Simple Bank System, between Customers)).
+ */
 public class Customer {
     //Create atleast 2 Customers through Account
     private String name;
